@@ -24,6 +24,6 @@ public class InsertSomeProductServlet extends HttpServlet {
         mp.setPrice(10f);
         DaoFactory.getProductDao().addProduct(mp);
 
-        resp.sendRedirect("http://localhost:8080/Hello_JavaEE_war_exploded/");
+        resp.sendRedirect(req.getContextPath());
     }
 }
