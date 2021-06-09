@@ -3,6 +3,7 @@ package com.hellojee.Hello_JavaEE.servlet;
 import com.mycommerce.dao.DaoFactory;
 import com.mycommerce.model.Product;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,14 +15,15 @@ import java.io.IOException;
 public class InsertSomeProductServlet extends HttpServlet {
 
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
         Product mp = new Product();
         mp.setContent("Some Product");
         mp.setName("Product A");
         mp.setPrice(10f);
         DaoFactory.getProductDao().addProduct(mp);
-
-        resp.sendRedirect(req.getContextPath());
+//        resp.sendRedirect(req.getContextPath()+"/Vues/Welcome.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("/Vues/Welcome.jsp");
+        rd.forward(req, res);
     }
 }

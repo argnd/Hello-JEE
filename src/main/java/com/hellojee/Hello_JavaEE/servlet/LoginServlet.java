@@ -1,6 +1,7 @@
 package com.hellojee.Hello_JavaEE.servlet;
 
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,9 +15,11 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         HttpSession curUser = req.getSession();
         curUser.setAttribute("user",req.getParameter("username"));//
-        resp.sendRedirect(req.getContextPath()+"/Vues/Welcome.jsp");
+//        resp.sendRedirect(req.getContextPath()+"/Vues/Welcome.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("/Vues/Welcome.jsp");
+        rd.forward(req, res);
     }
 }
