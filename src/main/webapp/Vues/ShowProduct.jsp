@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../css/Base.css" media="screen" />
   </head>
   <body >
-    <p> ADDED OR SHOWN </p>
+    <p> ${product.id} </p>
     <p>${product.name}</p>
     <p>${product.content}</p>
     <p>${product.price}</p>

@@ -1,4 +1,4 @@
-package com.hellojee.Hello_JavaEE;
+package com.hellojee.Hello_JavaEE.servlet;
 
 
 import com.mycommerce.dao.DaoFactory;

@@ -26,6 +26,11 @@
 </p>
 
 <p>
+    <a href="${pageContext.request.contextPath}/auth/addCategory">TEST JPA</a>
+    <br>
+</p>
+
+<p>
     <label for="maValeur"></label><input id="maValeur" type="number">
     <br>
 </p>
