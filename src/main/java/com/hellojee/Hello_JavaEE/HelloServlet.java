@@ -13,13 +13,12 @@ import javax.servlet.http.*;
 @WebServlet(name = "helloServlet", value = "/auth/hello")
 public class HelloServlet extends HttpServlet {
 
-
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 
         List<Product> l = new ArrayList<>();
-        l.add(new Product(1l,"hello","world",10f));
-        l.add(new Product(2l,"hello","world",19f));
-        l.add(new Product(3l,"hello","world",140f));
+        l.add(new Product(1L,"Hello","world",10f));
+        l.add(new Product(2L,"I am a","Servlet",19f));
+        l.add(new Product(3L,"Bye bye","world",140f));
 
         HttpSession curUser = req.getSession();
         curUser.setAttribute("liste",l);//
