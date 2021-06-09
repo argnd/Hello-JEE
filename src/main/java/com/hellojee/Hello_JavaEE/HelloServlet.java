@@ -1,30 +1,30 @@
 package com.hellojee.Hello_JavaEE;
 
+import com.mycommerce.model.Product;
+
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
 @WebServlet(name = "helloServlet", value = "/auth/hello")
 public class HelloServlet extends HttpServlet {
 
-    private String message;
 
-    public void init() {
-        message = "Hello JEE!";
-    }
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        // Hello
-        PrintWriter out = response.getWriter();
-        out.println("<html><body>");
-        out.println("<h1>" + message + "</h1>");
-        out.println("<br>");
-        out.println("Hello JEE");
-        out.println("</body></html>");
-    }
+        List<Product> l = new ArrayList<>();
+        l.add(new Product(1l,"hello","world",10f));
+        l.add(new Product(2l,"hello","world",19f));
+        l.add(new Product(3l,"hello","world",140f));
 
-    public void destroy() {
-
+        HttpSession curUser = req.getSession();
+        curUser.setAttribute("liste",l);//
+        RequestDispatcher rd = req.getRequestDispatcher("/Vues/ListProduct.jsp");
+        rd.forward(req, res);
     }
 
 }

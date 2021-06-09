@@ -17,22 +17,17 @@ body {
     background-color:#121212;
     text-align: center;
 }
+
 a{
     color:#E26E0E;
     text-align: center;
 }
-label {
+
+h1, table, label, head,p {
     color:#d3d3d3;
     text-align: center;
 }
-head{
-    color:#d3d3d3;
-    text-align: center;
-}
-h1 {
-    color:#d3d3d3;
-    text-align: center;
-}
+
 
 @-webkit-keyframes rightThenLeft {
     0%   {margin-right:0;}
