@@ -24,9 +24,6 @@ public class InsertSomeProductServlet extends HttpServlet {
         mp.setPrice(10f);
         DaoFactory.getProductDao().addProduct(mp);
 
-        HttpSession curUser = req.getSession();
-        curUser.setAttribute("product",mp);//
-        RequestDispatcher rd = req.getRequestDispatcher("../");
-        rd.forward(req, resp);
+        resp.sendRedirect("http://localhost:8080/Hello_JavaEE_war_exploded/");
     }
 }
