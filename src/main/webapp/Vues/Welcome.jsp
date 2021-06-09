@@ -25,10 +25,10 @@
     <br>
 </p>
 
-<p>
-    <a href="${pageContext.request.contextPath}/auth/addCategory">TEST JPA</a>
-    <br>
-</p>
+<form action="${pageContext.request.contextPath}/auth/addCategory" method="post">
+    <button type="submit" name="btn1.0101" value="your_value" class="btn-link">TEST JPA</button>
+</form>
+
 
 <p>
     <label for="maValeur"></label><input id="maValeur" type="number">

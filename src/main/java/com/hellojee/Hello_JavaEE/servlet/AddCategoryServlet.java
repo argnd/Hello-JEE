@@ -28,12 +28,16 @@ public class AddCategoryServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         EntityManager em = this.emf.createEntityManager();
         Category c = new Category();
-        c.setName("Hello");
+        em.getTransaction().begin();
         em.persist(c);
+        c.setName("Hello");
+        em.getTransaction().commit();
         em.close();
+
+        resp.sendRedirect(req.getContextPath()+"/Vues/Welcome.jsp");
     }
 
     @Override
