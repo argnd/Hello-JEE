@@ -14,6 +14,7 @@ public class Category extends JpaEntity implements Serializable {
     private String name;
 
     public Category(){
+        super(Category.class);
     }
 
     public long getId() {

@@ -8,7 +8,7 @@ public interface CrudDao<T> {
 
     void update(T jpaentity);
 
-    T findById(Long id);
+    T findById(T jpaentity);
 
     List<T> findAll();
 
