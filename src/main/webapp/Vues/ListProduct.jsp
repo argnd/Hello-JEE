@@ -18,7 +18,7 @@
         <table>
         <c:forEach items="${liste}" var="t">
             <tr>
-                <td><c:out value="${l.name}" /></td>
+                <td><c:out value="${t.name}" /></td>
                 <td><c:out value="${t.content}" /></td>
                 <td><c:out value="${t.price}"/></td>
             </tr>
