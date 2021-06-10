@@ -1,4 +1,50 @@
+/*real css*/
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color:#121212;
+}
+/*rows*/
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+/*header*/
+.header {
+    color:#d3d3d3;
+    text-align: center;
+    padding: 15px;
+}
+/*col*/
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
 
+.menu a, button,label {
+    padding: 8px;
+    margin-bottom: 7px;
+    color:#E26E0E;
+    text-align: center;
+}
+.menu a:hover, button:hover {
+    color: #11e3db;
+}
+/*hello css*/
 .wrapper{
     margin: 0 auto;
     max-width: 400px;
@@ -23,21 +69,6 @@
     text-decoration: underline;
     font-family: inherit;
     font-size: inherit;
-}
-
-body {
-    background-color:#121212;
-    text-align: center;
-}
-
-a{
-    color:#E26E0E;
-    text-align: center;
-}
-
-h1,h2, table, label, head,p {
-    color:#d3d3d3;
-    text-align: center;
 }
 
 @-webkit-keyframes rightThenLeft {
