@@ -5,7 +5,7 @@ public final class OtherDaoFactory {
     private OtherDaoFactory() {
     }
 
-    public static CrudDao getMyProductDao() {
+    public static CrudDao getMyJpaEntityDao() {
 
         return new JpaEntityDao(PersistenceManager.getConnection());
 

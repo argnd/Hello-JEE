@@ -26,7 +26,7 @@ public class AddCategoryServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Category c = new Category();
-        OtherDaoFactory.getMyProductDao().create(c);
+        OtherDaoFactory.getMyJpaEntityDao().create(c);
         resp.sendRedirect(req.getContextPath()+"/welcome");
     }
 }

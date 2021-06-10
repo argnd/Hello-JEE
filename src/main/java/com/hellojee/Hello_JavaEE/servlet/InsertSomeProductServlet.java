@@ -3,7 +3,6 @@ package com.hellojee.Hello_JavaEE.servlet;
 import com.mycommerce.dao.DaoFactory;
 import com.mycommerce.model.Product;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +13,7 @@ import java.io.IOException;
 public class InsertSomeProductServlet extends HttpServlet {
 
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+    protected void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
 
         Product mp = new Product();
         mp.setContent("Some Product");

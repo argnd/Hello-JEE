@@ -1,6 +1,7 @@
 package com.hellojee.Hello_JavaEE.dao;
 
 import com.hellojee.Hello_JavaEE.entity.Category;
+import com.hellojee.Hello_JavaEE.entity.JpaEntity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,7 +14,6 @@ public class JpaEntityDao implements CrudDao<Category> {
     public JpaEntityDao(EntityManagerFactory emf) {
         em = emf.createEntityManager();
     }
-
 
     public boolean create(Category c) {
         c.setName("Hello");
