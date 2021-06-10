@@ -6,7 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-@WebServlet(name = "helloServlet", value = "/index.jsp")
+@WebServlet(name = "helloServlet", value = "/welcome")
 public class HelloServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {

@@ -8,7 +8,7 @@ import java.util.List;
 
 public class JpaEntityDao implements CrudDao<Category> {
 
-    private static EntityManager em;
+    private EntityManager em = null;
 
     public JpaEntityDao(EntityManagerFactory emf) {
         em = emf.createEntityManager();

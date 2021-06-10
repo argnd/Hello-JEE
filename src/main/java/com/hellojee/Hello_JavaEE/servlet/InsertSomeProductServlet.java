@@ -3,7 +3,6 @@ package com.hellojee.Hello_JavaEE.servlet;
 import com.mycommerce.dao.DaoFactory;
 import com.mycommerce.model.Product;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +21,7 @@ public class InsertSomeProductServlet extends HttpServlet {
         mp.setName("Product A");
         mp.setPrice(10f);
         DaoFactory.getProductDao().addProduct(mp);
-        res.sendRedirect(req.getContextPath()+"/index.jsp");
+        res.sendRedirect(req.getContextPath()+"/welcome");
 
     }
 }

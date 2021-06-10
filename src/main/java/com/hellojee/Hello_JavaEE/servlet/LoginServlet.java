@@ -18,7 +18,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         HttpSession curUser = req.getSession();
         curUser.setAttribute("user",req.getParameter("username"));//
-        res.sendRedirect(req.getContextPath()+"/index.jsp");
+        res.sendRedirect(req.getContextPath()+"/welcome");
 
     }
 }

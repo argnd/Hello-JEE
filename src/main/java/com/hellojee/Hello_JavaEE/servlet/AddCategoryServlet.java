@@ -27,6 +27,6 @@ public class AddCategoryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Category c = new Category();
         OtherDaoFactory.getMyProductDao().create(c);
-        resp.sendRedirect(req.getContextPath()+"/index.jsp");
+        resp.sendRedirect(req.getContextPath()+"/welcome");
     }
 }
