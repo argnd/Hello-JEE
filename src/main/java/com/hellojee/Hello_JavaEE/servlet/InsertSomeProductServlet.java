@@ -22,8 +22,7 @@ public class InsertSomeProductServlet extends HttpServlet {
         mp.setName("Product A");
         mp.setPrice(10f);
         DaoFactory.getProductDao().addProduct(mp);
-//        resp.sendRedirect(req.getContextPath()+"/Vues/Welcome.jsp");
-        RequestDispatcher rd = req.getRequestDispatcher("/Vues/Welcome.jsp");
-        rd.forward(req, res);
+        res.sendRedirect(req.getContextPath()+"/");
+
     }
 }

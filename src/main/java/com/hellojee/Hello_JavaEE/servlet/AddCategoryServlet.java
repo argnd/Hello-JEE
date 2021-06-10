@@ -2,10 +2,13 @@ package com.hellojee.Hello_JavaEE.servlet;
 
 import com.hellojee.Hello_JavaEE.entity.Category;
 
+<<<<<<< Updated upstream
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.servlet.ServletException;
+=======
+>>>>>>> Stashed changes
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,11 +26,12 @@ public class AddCategoryServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp){
 
     }
 
     @Override
+<<<<<<< Updated upstream
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         EntityManager em = this.emf.createEntityManager();
         Category c = new Category();
@@ -43,5 +47,10 @@ public class AddCategoryServlet extends HttpServlet {
     @Override
     public void destroy() {
         this.emf.close();
+=======
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
+        OtherDaoFactory.getMyProductDao().create(new Category());
+        res.sendRedirect(req.getContextPath()+"/");
+>>>>>>> Stashed changes
     }
 }
