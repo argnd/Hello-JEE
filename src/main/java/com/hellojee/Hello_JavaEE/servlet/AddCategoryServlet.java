@@ -1,10 +1,14 @@
 package com.hellojee.Hello_JavaEE.servlet;
 
+import com.hellojee.Hello_JavaEE.dao.JpaEntityDao;
+import com.hellojee.Hello_JavaEE.dao.OtherDaoFactory;
 import com.hellojee.Hello_JavaEE.entity.Category;
+import com.mycommerce.dao.DaoFactory;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.print.attribute.standard.MediaSize;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,13 +18,6 @@ import java.io.IOException;
 @WebServlet(name = "addcatservlet", value = "/auth/addCategory")
 public class AddCategoryServlet extends HttpServlet {
 
-    private EntityManagerFactory emf = null;
-
-    @Override
-    public void init() {
-        this.emf = Persistence.createEntityManagerFactory("PU");
-    }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp){
 
@@ -28,14 +25,8 @@ public class AddCategoryServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        EntityManager em = this.emf.createEntityManager();
         Category c = new Category();
-        em.getTransaction().begin();
-        em.persist(c);
-        c.setName("Hello");
-        em.getTransaction().commit();
-        em.close();
-
-        resp.sendRedirect(req.getContextPath()+"/Vues/Welcome.jsp");
+        OtherDaoFactory.getMyProductDao().create(c);
+        resp.sendRedirect(req.getContextPath()+"/index.jsp");
     }
 }

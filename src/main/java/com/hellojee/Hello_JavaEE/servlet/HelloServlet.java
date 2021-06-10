@@ -10,8 +10,6 @@ import javax.servlet.http.*;
 public class HelloServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-        //res.sendRedirect(req.getContextPath()+"/Vues/Welcome.jsp");
-
         RequestDispatcher rd = req.getRequestDispatcher("/Vues/Welcome.jsp");
         rd.forward(req, res);
     }

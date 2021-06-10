@@ -22,7 +22,7 @@ public class InsertSomeProductServlet extends HttpServlet {
         mp.setName("Product A");
         mp.setPrice(10f);
         DaoFactory.getProductDao().addProduct(mp);
-        res.sendRedirect(req.getContextPath()+"/");
+        res.sendRedirect(req.getContextPath()+"/index.jsp");
 
     }
 }
