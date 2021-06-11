@@ -21,7 +21,6 @@ public class JpaEntityDao<T extends JpaReflectiveEntity> implements CrudDao<T> {
         this.em.getTransaction().commit();
         boolean tmp = this.em.contains(jpaReflectiveEntity);
         this.em.close();
-
         return tmp;
     }
 
@@ -54,6 +53,5 @@ public class JpaEntityDao<T extends JpaReflectiveEntity> implements CrudDao<T> {
             this.em.getTransaction().commit();
         }
     }
-
 }
 

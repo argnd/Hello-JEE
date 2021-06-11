@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "addcatservlet", value = "/auth/addCategory")
+@WebServlet(name = "addcatservlet", value = "/add")
 public class Addtest extends HttpServlet {
 
     @Override
@@ -25,10 +25,15 @@ public class Addtest extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        OtherProduct c = new OtherProduct();
+        OtherProduct p = new OtherProduct();
+        Category c = new Category();
         c.setName("test");
-        c.setId(1L);
-        OtherDaoFactory.getMyJpaEntityDao().remove(c);
+        OtherDaoFactory.getMyJpaEntityDao().create(c);
+        p.setCat((Category) OtherDaoFactory.getMyJpaEntityDao().findById(c));
+        p.setName("hello");
+        p.setContent("world");
+        p.setPrice(37L);
+        OtherDaoFactory.getMyJpaEntityDao().create(p);
         resp.sendRedirect(req.getContextPath()+"/welcome");
     }
 }

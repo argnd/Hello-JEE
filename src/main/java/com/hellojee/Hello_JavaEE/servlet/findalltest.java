@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "sds", value = "/test")
+@WebServlet(name = "sds", value = "/list")
 public class findalltest extends HttpServlet {
 
     @Override

@@ -20,6 +20,17 @@ public class OtherProduct extends JpaReflectiveEntity implements Serializable {
     private String content;
     @Column(name="Price")
     private float price;
+    @ManyToOne
+    @JoinColumn(name="Category_fk")
+    private Category category;
+
+    public Category getCat() {
+        return category;
+    }
+
+    public void setCat(Category cat) {
+        this.category = cat;
+    }
 
     public OtherProduct() {
         super(OtherProduct.class);

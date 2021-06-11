@@ -6,9 +6,7 @@ public final class OtherDaoFactory {
     }
 
     public static CrudDao getMyJpaEntityDao() {
-//        return xyzdao
         return new JpaEntityDao(PersistenceManager.getConnection());
-
     }
 
 }

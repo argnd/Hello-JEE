@@ -3,6 +3,7 @@ package com.hellojee.Hello_JavaEE.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="Categories")
@@ -12,6 +13,16 @@ public class Category extends JpaReflectiveEntity implements Serializable {
     private Long id;
     @Column(name="Name")
     private String name;
+    @OneToMany(mappedBy = "category")
+    private List<OtherProduct> otherProducts;
+
+    public List<OtherProduct> getProd() {
+        return otherProducts;
+    }
+
+    public void setProd(List<OtherProduct> prod) {
+        this.otherProducts = prod;
+    }
 
     public Category(){
         super(Category.class);
