@@ -32,7 +32,6 @@ public class JpaEntityDao<T extends JpaReflectiveEntity> implements CrudDao<T> {
     @Override
     public T findById(T jpaReflectiveEntity) {
         return (T) em.find(jpaReflectiveEntity.getaClass(), jpaReflectiveEntity.getId());
-//        return em.find(Category.class, jpaentity.getId());
     }
 
     @Override
