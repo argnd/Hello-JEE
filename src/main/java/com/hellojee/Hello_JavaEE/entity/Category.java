@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class Category extends JpaReflectiveEntity implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column(name="Name")
     private String name;
 
@@ -17,7 +17,7 @@ public class Category extends JpaReflectiveEntity implements Serializable {
         super(Category.class);
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

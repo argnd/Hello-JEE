@@ -3,6 +3,7 @@ package com.hellojee.Hello_JavaEE.servlet;
 
 import com.hellojee.Hello_JavaEE.dao.OtherDaoFactory;
 import com.hellojee.Hello_JavaEE.entity.Category;
+import com.hellojee.Hello_JavaEE.entity.OtherProduct;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "addcatservlet", value = "/auth/addCategory")
-public class AddCategoryServlet extends HttpServlet {
+public class Addtest extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -24,7 +25,7 @@ public class AddCategoryServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        Category c = new Category();
+        OtherProduct c = new OtherProduct();
         c.setName("test");
         OtherDaoFactory.getMyJpaEntityDao().create(c);
         resp.sendRedirect(req.getContextPath()+"/welcome");

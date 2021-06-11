@@ -16,8 +16,8 @@ public class InsertSomeProductServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
 
         Product mp = new Product();
-        mp.setContent("Some Product");
-        mp.setName("Product A");
+        mp.setContent("Some OtherProduct");
+        mp.setName("OtherProduct A");
         mp.setPrice(10f);
         DaoFactory.getProductDao().addProduct(mp);
         res.sendRedirect(req.getContextPath()+"/welcome");

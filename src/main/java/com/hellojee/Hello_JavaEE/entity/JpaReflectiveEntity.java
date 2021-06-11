@@ -14,6 +14,6 @@ public abstract class JpaReflectiveEntity {
         return aClass;
     }
 
-    public abstract long getId();
+    public abstract Long getId();
 
 }
