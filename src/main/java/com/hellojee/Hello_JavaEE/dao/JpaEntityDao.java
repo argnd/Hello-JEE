@@ -1,12 +1,12 @@
 package com.hellojee.Hello_JavaEE.dao;
 
-import com.hellojee.Hello_JavaEE.entity.JpaEntity;
+import com.hellojee.Hello_JavaEE.entity.JpaReflectiveEntity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import java.util.List;
 
-public class JpaEntityDao<T extends JpaEntity> implements CrudDao<T> {
+public class JpaEntityDao<T extends JpaReflectiveEntity> implements CrudDao<T> {
 
     private EntityManager em = null;
 
@@ -14,40 +14,37 @@ public class JpaEntityDao<T extends JpaEntity> implements CrudDao<T> {
         em = emf.createEntityManager();
     }
 
-    public boolean create(T jpaentity) {
+    public boolean create(T jpaReflectiveEntity) {
         em.getTransaction().begin();
-        em.persist(jpaentity);
+        em.persist(jpaReflectiveEntity);
         em.getTransaction().commit();
-        boolean tmp = em.contains(jpaentity);
+        boolean tmp = em.contains(jpaReflectiveEntity);
         em.close();
 
         return tmp;
     }
 
     @Override
-    public void update(T jpaentity) {
+    public void update(T jpaReflectiveEntity) {
 
     }
 
     @Override
-    public T findById(T jpaentity) {
-        return (T) em.find(jpaentity.getaClass(), jpaentity.getId());
+    public T findById(T jpaReflectiveEntity) {
+        return (T) em.find(jpaReflectiveEntity.getaClass(), jpaReflectiveEntity.getId());
 //        return em.find(Category.class, jpaentity.getId());
     }
 
     @Override
     public List<T> findAll() {
+
         return null;
     }
 
     @Override
-    public void remove(T jpaentity) {
+    public void remove(T jpaReflectiveEntity) {
 
     }
 
-    @Override
-    public void removeById(Long id) {
-
-    }
 }
 

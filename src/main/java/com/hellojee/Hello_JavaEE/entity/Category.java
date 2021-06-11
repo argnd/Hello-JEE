@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name="Categories")
-public class Category extends JpaEntity implements Serializable {
+public class Category extends JpaReflectiveEntity implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;

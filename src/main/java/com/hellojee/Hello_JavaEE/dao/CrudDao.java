@@ -4,17 +4,15 @@ import java.util.List;
 
 public interface CrudDao<T> {
 
-    boolean create(T jpaentity);
+    boolean create(T model);
 
-    void update(T jpaentity);
+    void update(T model);
 
-    T findById(T jpaentity);
+    T findById(T model);
 
     List<T> findAll();
 
-    void remove(T jpaentity);
-
-    void removeById(Long id);
+    void remove(T model);
 
 }
 
