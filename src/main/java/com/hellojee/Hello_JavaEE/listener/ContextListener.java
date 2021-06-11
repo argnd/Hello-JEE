@@ -2,7 +2,6 @@ package com.hellojee.Hello_JavaEE.listener;
 
 import com.hellojee.Hello_JavaEE.dao.PersistenceManager;
 
-//import javax.persistence.Persistence;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
