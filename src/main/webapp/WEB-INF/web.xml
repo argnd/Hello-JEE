@@ -7,4 +7,10 @@
             <welcome-file>welcome</welcome-file>
         </welcome-file-list>
 
+    <listener>
+        <listener-class>
+            com.hellojee.Hello_JavaEE.listener.ContextListener
+        </listener-class>
+    </listener>
+
 </web-app>

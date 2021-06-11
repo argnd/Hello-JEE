@@ -6,10 +6,10 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-@WebServlet(name = "helloServlet", value = "/welcome")
-public class HelloServlet extends HttpServlet {
+@WebServlet(name = "WelcomePage", value = "/welcome")
+public class WelcomePage extends HttpServlet {
 
-    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+    protected void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
         RequestDispatcher rd = req.getRequestDispatcher("/Vues/Welcome.jsp");
         rd.forward(req, res);
     }

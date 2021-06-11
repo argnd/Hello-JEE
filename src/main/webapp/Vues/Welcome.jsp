@@ -17,22 +17,6 @@
         <div class = "row">
             <div class="col-3 menu">
                 <a href="${pageContext.request.contextPath}/Vues/login.html">Login</a>
-                <br>
-                <br>
-                <a href="${pageContext.request.contextPath}/auth/basicinsert">Insert</a>
-                <br>
-                <br>
-                <a href="${pageContext.request.contextPath}/auth/listproduct">List</a>
-                <br>
-                <br>
-                <form action="${pageContext.request.contextPath}/add" method="post">
-                    <button type="submit" name="btn1.0101" value="your_value" class="btn-link">TEST JPA</button>
-                </form>
-            </div>
-
-            <div class="col-5 menu">
-                <label for="maValeur"></label><input id="maValeur" type="number">
-                <input type="button" onclick="location.href=showChosenIdProduct();return false" value="VALIDER" />
             </div>
 
             <div class="col-9">
