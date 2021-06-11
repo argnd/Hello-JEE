@@ -27,7 +27,8 @@ public class Addtest extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         OtherProduct c = new OtherProduct();
         c.setName("test");
-        OtherDaoFactory.getMyJpaEntityDao().create(c);
+        c.setId(1L);
+        OtherDaoFactory.getMyJpaEntityDao().remove(c);
         resp.sendRedirect(req.getContextPath()+"/welcome");
     }
 }
