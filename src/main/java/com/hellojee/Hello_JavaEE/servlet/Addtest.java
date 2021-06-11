@@ -17,9 +17,9 @@ public class Addtest extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Category c = new Category();
-        c.setName("ssss");
-        c.setId(14L);
-        System.out.println(((Category)OtherDaoFactory.getMyJpaEntityDao().findById(c)).getName());
+        c.setName("updated");
+        c.setId(1L);
+        OtherDaoFactory.getMyJpaEntityDao().update(c);
         resp.sendRedirect(req.getContextPath()+"/welcome");
     }
 

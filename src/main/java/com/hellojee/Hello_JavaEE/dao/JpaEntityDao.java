@@ -26,7 +26,10 @@ public class JpaEntityDao<T extends JpaReflectiveEntity> implements CrudDao<T> {
 
     @Override
     public void update(T jpaReflectiveEntity) {
-
+        this.em.getTransaction().begin();
+        em.merge(jpaReflectiveEntity);
+        this.em.getTransaction().commit();
+        this.em.close();
     }
 
     @Override
@@ -44,6 +47,7 @@ public class JpaEntityDao<T extends JpaReflectiveEntity> implements CrudDao<T> {
     }
 
     @Override
+
     public void remove(T jpaReflectiveEntity) {
         JpaReflectiveEntity j = findById(jpaReflectiveEntity);
         System.out.println(j.getaClass());
@@ -52,6 +56,7 @@ public class JpaEntityDao<T extends JpaReflectiveEntity> implements CrudDao<T> {
             this.em.remove(j);
             this.em.getTransaction().commit();
         }
+        this.em.close();
     }
 }
 
