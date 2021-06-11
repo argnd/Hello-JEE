@@ -4,6 +4,8 @@ import com.hellojee.Hello_JavaEE.entity.JpaReflectiveEntity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
+import java.util.ArrayList;
 import java.util.List;
 
 public class JpaEntityDao<T extends JpaReflectiveEntity> implements CrudDao<T> {
@@ -35,9 +37,11 @@ public class JpaEntityDao<T extends JpaReflectiveEntity> implements CrudDao<T> {
     }
 
     @Override
-    public List<T> findAll() {
-
-        return null;
+    public List<T> findAll(T jpaReflectiveEntity) {
+        List<T>  l;
+        Query query = em.createQuery("SELECT e FROM "+jpaReflectiveEntity.getaClass().getName()+" e");
+        l = (List<T>) query.getResultList();
+        return l;
     }
 
     @Override

@@ -10,7 +10,7 @@ public interface CrudDao<T> {
 
     T findById(T model);
 
-    List<T> findAll();
+    List<T> findAll(T model);
 
     void remove(T model);
 
